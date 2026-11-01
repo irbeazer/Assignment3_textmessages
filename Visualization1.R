@@ -31,7 +31,7 @@ dat.long <- dat %>%
 ggplot(dat.long, aes(Group, Values)) +
   geom_boxplot(color = 'black', fill = 'lightgrey',
                outliers = FALSE) +
-  geom_jitter(color = 'blue', width = 0.2) +
+  # geom_jitter(color = 'blue', width = 0.2) +
   theme_light() +
   coord_cartesian(ylim = c(0, max(dat.long$Values))) +
   scale_y_continuous(breaks = seq(0, max(dat.long$Values)*1.2, by = 10)) +
@@ -41,5 +41,6 @@ ggplot(dat.long, aes(Group, Values)) +
     x = 'Group',
     y = 'Number of Messages'
   ) +
+  facet_wrap(~Time)+
   NULL
 
