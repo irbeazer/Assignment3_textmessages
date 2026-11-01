@@ -30,4 +30,5 @@ dat.long <- dat %>%
 
 ggplot(dat.long, aes(Group, Values)) +
   geom_boxplot(color = 'black', fill = 'lightgrey',
-               outliers = FALSE)
+               outliers = FALSE) +
+  geom_jitter(color = 'blue', width = 0.2)
