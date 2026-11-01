@@ -24,3 +24,10 @@ dat.long <- dat %>%
     names_to = 'Time',
     values_to = 'Values'
   )
+
+# ---- Boxplot ----
+# We want to make a boxplots stratified by both Group and Time
+
+ggplot(dat.long, aes(Group, Values)) +
+  geom_boxplot(color = 'black', fill = 'lightgrey',
+               outliers = FALSE)
