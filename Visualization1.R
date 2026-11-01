@@ -14,3 +14,13 @@ str(dat)
 
 dat$Participant <- as.factor(dat$Participant)
 dat$Group <- as.factor(dat$Group)
+
+## ---- Transform data ----
+# For ease of visualization, we transform the data to a long format
+
+dat.long <- dat %>%
+  pivot_longer(
+    cols = c(Baseline, Six_months),
+    names_to = 'Time',
+    values_to = 'Values'
+  )
