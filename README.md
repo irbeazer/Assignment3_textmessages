@@ -24,13 +24,13 @@ Repository for Assignment 3 of BHDS:2010.
 
     - Each group member creates a branch for their part of the analysis. There are the following assigned roles:
 
-      - **Visualization #1:** Creates stratified boxplot of text messages by Group and Time (Hint: Faceted Boxplot).
+      - **Visualization #1[Rex]:** Creates stratified boxplot of text messages by Group and Time (Hint: Faceted Boxplot).
 
-      - **Visualization #2:** Creates stratified bar charts of text messages Group and Time (Hint: Faceted Bar Charts).
+      - **Visualization #2[Idara]:** Creates stratified bar charts of text messages Group and Time (Hint: Faceted Bar Charts).
 
-      - **Summary Statistics:** Creates summary statistics of Text Messages by Group and Time.
+      - **Summary Statistics[Idara]:** Creates summary statistics of Text Messages by Group and Time.
 
-      - **Documentation:** Update the README.md file with activity details and instructions.
+      - **Documentation[Rex]:** Update the README.md file with activity details and instructions.
 
     - Participants create their branches in RStudio to work independently
 
