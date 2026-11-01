@@ -35,5 +35,11 @@ ggplot(dat.long, aes(Group, Values)) +
   theme_light() +
   coord_cartesian(ylim = c(0, max(dat.long$Values))) +
   scale_y_continuous(breaks = seq(0, max(dat.long$Values)*1.2, by = 10)) +
+  labs(
+    title = 'Boxplots of Text Messages',
+    subtitle = 'Stratified by Group and Time-Period',
+    x = 'Group',
+    y = 'Number of Messages'
+  ) +
   NULL
 
