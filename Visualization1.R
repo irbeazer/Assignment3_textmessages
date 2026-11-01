@@ -9,3 +9,8 @@ str(dat)
 ## There is a variable (Participant) indexing the participants
 ## The other two variables (Baseline, Six_months) are scores taken for each
 ## participant at different time periods.
+
+## ---- Factorize variables ----
+
+dat$Participant <- as.factor(dat$Participant)
+dat$Group <- as.factor(dat$Group)
