@@ -29,8 +29,7 @@ dat.long <- dat %>%
 # We want to make a boxplots stratified by both Group and Time
 
 ggplot(dat.long, aes(Group, Values)) +
-  geom_boxplot(color = 'black', fill = 'lightgrey',
-               outliers = FALSE) +
+  geom_boxplot(color = 'black', fill = 'lightgrey') +
   # geom_jitter(color = 'blue', width = 0.2) +
   theme_light() +
   coord_cartesian(ylim = c(0, max(dat.long$Values))) +
@@ -43,4 +42,7 @@ ggplot(dat.long, aes(Group, Values)) +
   ) +
   facet_wrap(~Time)+
   NULL
-
+## At baseline, the two groups appear normally distributed and are very similar
+## to each other, with a median around 65. At 6 months, both groups had a
+## decrease in messages; Group 1 appears to have had more of a decrease, and has
+## several outliers that are very low.
