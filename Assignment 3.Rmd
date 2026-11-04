@@ -1,0 +1,28 @@
+---
+title: "Assignment 3"
+author: "Idara Bassey; I Rex Beazer"
+date: "2026-11-04"
+output: pdf_document
+---
+
+```{r setup, echo=TRUE, warning=FALSE, message=FALSE}
+#Add libraries here
+```
+
+# Stratified Boxplot
+
+```{r boxplot, echo=TRUE, warning=FALSE, message=FALSE}
+#Add code for boxplot here
+```
+
+# Stratified Bar Chart
+
+```{r bar, echo=TRUE, warning=FALSE, message=FALSE}
+#ADd code for barcharts here
+```
+
+# Summary Statistics
+
+```{r summary, echo=TRUE, warning=FALSE, message=FALSE}
+#Add summary statistics here
+```
