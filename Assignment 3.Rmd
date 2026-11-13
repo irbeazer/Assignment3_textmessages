@@ -6,7 +6,6 @@ output: pdf_document
 ---
 
 ```{r setup, echo=TRUE, warning=FALSE, message=FALSE}
-#Add libraries here
 library(tidyverse)
 library(pastecs)
 
@@ -45,14 +44,7 @@ by(dat.long$TextMessages,
    function(X) round(stat.desc(X), 2))
 ```
 
-Our summary statistics show a similar average number of texts for both groups at
-baseline, with Group 1 averaging 64.84 and Group 2 averaging 65.60. After six 
-months, we see a decrease in the means of both groups, however Group 1 had a 
-greater reduction in average texts with 52.96 texts sent on average, while Group
-2 had an average of 61.84 texts sent by month six. Group 1 also showed greater
-variability in the number of texts sent after six months, with its standard 
-deviation increasing from 10.68 to 16.33, while Group 2 showed a slight decrease
-from 10.84 to 9.41.
+Our summary statistics show a similar average number of texts for both groups at baseline, with Group 1 averaging 64.84 and Group 2 averaging 65.60. After six months, we see a decrease in the means of both groups, however Group 1 had a greater reduction in average texts with 52.96 texts sent on average, while Group 2 had an average of 61.84 texts sent by month six. Group 1 also showed greater variability in the number of texts sent after six months, with its standard deviation increasing from 10.68 to 16.33, while Group 2 showed a slight decrease from 10.84 to 9.41.
 
 # Stratified Boxplot
 
@@ -90,7 +82,4 @@ ggplot(dat.long, aes(x=Time, y=TextMessages, fill=Time)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-The faceted bar chart gives us a clearer view of the decrease in average text
-messages over time. By separating the data by the groups, we can easily compare 
-the changes from baseline to six months and see that Group 1 experienced a 
-greater decrease than Group 2.
+The faceted bar chart gives us a clearer view of the decrease in average text messages over time. By separating the data by the groups, we can easily compare the changes from baseline to six months and see that Group 1 experienced a greater decrease than Group 2.
