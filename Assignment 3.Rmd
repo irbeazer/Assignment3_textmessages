@@ -8,6 +8,7 @@ output: pdf_document
 ```{r setup, echo=TRUE, warning=FALSE, message=FALSE}
 #Add libraries here
 library(tidyverse)
+library(pastecs)
 
 # Load Data
 dat <- read.csv('TextMessages.csv')
@@ -31,7 +32,7 @@ dat.long <- dat %>%
   pivot_longer(
     cols = c(Baseline, Six_months),
     names_to = 'Time',
-    values_to = 'Values'
+    values_to = 'TextMessages'
   )
 ```
 
@@ -40,19 +41,19 @@ dat.long <- dat %>%
 ```{r boxplot, echo=TRUE, warning=FALSE, message=FALSE}
 # We want to make a boxplots stratified by both Group and Time
 
-ggplot(dat.long, aes(Group, Values)) +
+ggplot(dat.long, aes(Time, TextMessages)) +
   geom_boxplot(color = 'black', fill = 'lightgrey') +
   # geom_jitter(color = 'blue', width = 0.2) +
   theme_light() +
-  coord_cartesian(ylim = c(0, max(dat.long$Values))) +
-  scale_y_continuous(breaks = seq(0, max(dat.long$Values)*1.2, by = 10)) +
+  coord_cartesian(ylim = c(0, max(dat.long$TextMessages))) +
+  scale_y_continuous(breaks = seq(0, max(dat.long$TextMessages)*1.2, by = 10)) +
   labs(
     title = 'Boxplots of Text Messages',
     subtitle = 'Stratified by Group and Time-Period',
     x = 'Group',
     y = 'Number of Messages'
   ) +
-  facet_wrap(~Time)+
+  facet_wrap(~Group)+
   NULL
 
 ```
@@ -62,11 +63,24 @@ At baseline, the two groups appear normally distributed and are very similar to 
 # Stratified Bar Chart
 
 ```{r bar, echo=TRUE, warning=FALSE, message=FALSE}
-#ADd code for barcharts here
+ggplot(dat.long, aes(x=Time, y=TextMessages, fill=Time)) +
+  facet_wrap(~Group) +
+  stat_summary(fun = mean, geom = "bar") +
+  scale_fill_brewer(palette = "RdPu") +
+  labs(title = "Average # of Text Messages by Group and Time",
+       x = "Time", y = "Average # of Text Messages") +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
+
+Idara please insert interpretation here
 
 # Summary Statistics
 
 ```{r summary, echo=TRUE, warning=FALSE, message=FALSE}
-#Add summary statistics here
+
+by(dat.long$TextMessages, 
+   list (dat.long$Group, dat.long$Time), 
+   function(X) round(stat.desc(X), 2))
 ```
+
+Idara please insert interpretation here
